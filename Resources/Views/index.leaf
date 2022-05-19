@@ -1,12 +1,93 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+    <meta charset="utf-8">
+    <title>Cryptography Demo</title>
 
-  <title>#(title)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.2/font/bootstrap-icons.css">
 </head>
-
 <body>
-  <h1>#(title)</h1>
+    <nav class="navbar navbar-fixed-top navbar-expand-lg bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/">Home</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                #if(user()):
+                
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">    
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/caesar">Caesar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/hash">Hash</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/user/list">Users</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"data-bs-toggle="dropdown" aria-expanded="false">HMAC</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="/hmac">Compute</a></li>
+                            <li><a class="dropdown-item" href="/hmac/verify">Verify</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"data-bs-toggle="dropdown" aria-expanded="false">Messages</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="/messages">View</a></li>
+                            <li><a class="dropdown-item" href="/messages/send">Send</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"data-bs-toggle="dropdown" aria-expanded="false">Asymmetric</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="/user/keys">Public keys</a></li>
+                            <li><a class="dropdown-item" href="/asymmetric/sign">Sign</a></li>
+                            <li><a class="dropdown-item" href="/asymmetric/verify">Verify</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"data-bs-toggle="dropdown" aria-expanded="false">Messages v2</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="/asymmetric/messages">View</a></li>
+                            <li><a class="dropdown-item" href="/asymmetric/messages/send">Send</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="navbar-nav mb-2 mb-lg-0 d-flex">
+                    <li class="nav-item d-flex">
+                        <a class="nav-link active" href="/user/logout">Logout</a>
+                    </li>
+                </ul>
+
+                #else:
+
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/user/login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/user/register">Register</a>
+                    </li>
+
+                </ul>
+
+                #endif
+            </div>
+        </div>
+    </nav>
+
+    #import("content")
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>

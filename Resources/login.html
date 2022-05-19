@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>#(title)</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+    
+    <link rel="stylesheet" href="../Public/css/normalize.css">
+    <link rel="stylesheet" href="../Public/css/skeleton.css">
+    <link rel="stylesheet" href="../Public/css/styles.css">
+</head>
+<body>
+    <div class="nav" style="height: 50px; padding: 0px 25px;">
+        Home
+    </div>
+    
+    <div class="container">
+        <h1>Login</h1>
+        <form action="" method="post">
+            
+            #if(error):
+            <div class="row" style="margin: 10px 0px;">
+                <strong class="column error">#(error)</strong>
+            </div>
+            #endif
+            <div class="row">
+                <label class="u-full-width" for="username">Username</label>
+                <input class="u-full-width" type="text" placeholder="Username" name="username" required/>
+            </div>
+            <div class="row">
+                <label class="u-full-width" for="username">Password</label>
+                <input class="u-full-width" type="text" placeholder="Password" name="password" required/>
+            </div>
+            <div class="row" style="margin: 10px 0px;">
+                <input class="eight columns offset-by-two" type="submit" value="Login">
+            </div>
+        </form>
+    </div>
+</body>
+</html>

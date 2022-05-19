@@ -1,0 +1,8 @@
+#extend("index"):
+    #export("content"):
+    <div class="container">
+        <h1>Message from #(sender)</h1>
+        <p>#(message)</p>
+    </div>
+    #endexport
+#endextend

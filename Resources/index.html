@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>#(title)</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+    
+    <link rel="stylesheet" href="../Public/css/normalize.css">
+    <link rel="stylesheet" href="../Public/css/skeleton.css">
+    <link rel="stylesheet" href="../Public/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Caesar cipher</h1>
+        
+        <div class="row" style="margin: 10px 0px;">
+        #if(error):
+            <strong class="column error p10">#(error)</strong>
+        #else:
+            <strong class="column p10">&nbsp;</strong>
+        #endif
+        </div>
+        
+        <div class="row">
+            <div class="six columns">
+                <form action="encrypt" method="post">
+                    <label for="plaintext">Message</label>
+                    <textarea class="u-full-width" style="resize: none; height: 20vh;" placeholder="Message" name="plaintext" required>#(plaintext)</textarea>
+                    
+                    <label for="key">Key</label>
+                    <input type="number" name="key" min="1" max="25" required value="1"/>
+                    <input class="u-pull-right" type="submit" value="Encrypt"/>
+                </form>
+            </div>
+            
+            <div class="six columns">
+                <form action="decrypt" method="post">
+                    <label for="plaintext">Ciphertext</label>
+                    <textarea class="u-full-width" style="resize: none; height: 20vh;" placeholder="Ciphertext" name="ciphertext" required></textarea>
+                    
+                    <label for="key">Key</label>
+                    <input type="number" name="key" min="1" max="25" required value="1"/>
+                    <input class="u-pull-right" type="submit" value="Decrypt"/>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

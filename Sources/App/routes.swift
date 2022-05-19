@@ -6,9 +6,10 @@ func routes(_ app: Application) throws {
         return req.view.render("index", ["title": "Hello Vapor!"])
     }
 
-    app.get("hello") { req -> String in
-        return "Hello, world!"
-    }
-
-    try app.register(collection: TodoController())
+    try app.register(collection: UserController())
+    try app.register(collection: CaesarController())
+    try app.register(collection: HashController())
+    try app.register(collection: HmacController())
+    try app.register(collection: MessageController())
+    try app.register(collection: AsymmetricController())
 }

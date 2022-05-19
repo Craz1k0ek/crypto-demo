@@ -1,0 +1,31 @@
+#extend("index"):
+    #export("content"):
+    <div class="container">
+        <h1>Register</h1>
+
+        #if(error):
+            <div class="alert alert-danger" role="alert">#(error)</div>
+        #endif
+
+        <div class="row">
+            <form action="" method="post">
+                <div class="mb-3">
+                    <label class="form-label">Username</label>
+                    <input class="form-control" type="text" placeholder="Username" name="username" required/>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Password</label>
+                    <input class="form-control" type="password" placeholder="Password" name="password" required/>
+                </div>
+                <div class="d-grid">
+                    <input class="btn btn-primary" type="submit" value="Register">
+                </div>
+            </form>
+
+            <div class="d-flex justify-content-center">
+                <a class="mt-3" href="/user/login">Already have an account? Login instead</a>
+            </div>
+        </div>
+    </div>
+    #endexport
+#endextend

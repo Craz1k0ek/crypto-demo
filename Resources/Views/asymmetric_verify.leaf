@@ -1,0 +1,29 @@
+#extend("index"):
+    #export("content"):
+    <div class="container">
+        <h1>Asymmetric Verify</h1>
+
+        #if(error):
+            <div class="alert alert-danger" role="alert">#(error)</div>
+        #elseif(success):
+            <div class="alert alert-success" role="alert">#(success)</div>
+        #endif
+
+        <div class="row">
+            <form action="" method="post">
+                <div class="mb-3">
+                    <label class="form-label">Message</label>
+                    <textarea class="form-control" style="resize: none; height: 20vh;" placeholder="Message" name="message">#(message)</textarea>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Signature</label>
+                    <textarea class="form-control" style="resize: none; height: 20vh;" placeholder="Signature" name="signature">#(signature)</textarea>
+                </div>
+                <div class="mb-3">
+                    <input class="btn btn-primary" type="submit" value="Verify">
+                </div>
+            </form>
+        </div>
+    </div>
+    #endexport
+#endextend

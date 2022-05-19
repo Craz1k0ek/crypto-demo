@@ -1,0 +1,64 @@
+#extend("index"):
+    #export("content"):
+    <div class="container">
+        <h1>Hashing</h1>
+
+        <div class="row">
+            <form action="" method="post">
+                <div class="mb-3">
+                    <label class="form-label">Message</label>
+                    <textarea class="form-control" style="resize: none; height: 20vh;" placeholder="Message" name="message">#(message)</textarea>
+                </div>
+                <div class="mb-3">
+                    <input class="btn btn-primary" type="submit" value="Hash">
+                </div>
+            </form>
+        </div>
+
+        #if(md5 || sha1 || sha256 || sha384 || sha512):
+        <div class="row">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Algorithm</th>
+                        <th scope="col">Hash</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    #if(md5):
+                    <tr>
+                        <td>MD-5</td>
+                        <td style="font-family: monospace;">#(md5)</td>
+                    </tr>
+                    #endif
+                    #if(sha1):
+                    <tr>
+                        <td>SHA-1</td>
+                        <td style="font-family: monospace;">#(sha1)</td>
+                    </tr>
+                    #endif
+                    #if(sha256):
+                    <tr>
+                        <td>SHA-256</td>
+                        <td style="font-family: monospace;">#(sha256)</td>
+                    </tr>
+                    #endif
+                    #if(sha384):
+                    <tr>
+                        <td>SHA-384</td>
+                        <td style="font-family: monospace;">#(sha384)</td>
+                    </tr>
+                    #endif
+                    #if(sha512):
+                    <tr>
+                        <td>SHA-512</td>
+                        <td style="font-family: monospace;">#(sha512)</td>
+                    </tr>
+                    #endif
+                </tbody>
+            </table>
+        </div>
+        #endif
+    </div>
+    #endexport
+#endextend

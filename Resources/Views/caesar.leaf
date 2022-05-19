@@ -1,0 +1,44 @@
+#extend("index"):
+    #export("content"):
+    <div class="container">
+        <h1>Caesar cipher</h1>
+
+        #if(error):
+            <div class="alert alert-danger" role="alert">#(error)</div>
+        #endif
+
+        <div class="row">
+            <div class="col-md-6">
+                <form action="/caesar/encrypt" method="post">
+                    <div class="mb-3">
+                        <label class="form-label">Message</label>
+                        <textarea class="form-control" style="resize: none; height: 20vh;" placeholder="Message" name="plaintext" required>#(plaintext)</textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="key">Key</label>
+                            <input class="form-control" type="number" name="key" min="1" max="25" required value="#(key)"/>
+                    </div>
+                    <div class="d-grid">
+                        <input class="btn btn-primary" type="submit" value="Encrypt">
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <form action="/caesar/decrypt" method="post">
+                    <div class="mb-3">
+                        <label class="form-label">Ciphertext</label>
+                        <textarea class="form-control" style="resize: none; height: 20vh;" placeholder="Ciphertext" name="ciphertext" required>#(ciphertext)</textarea>
+                    </div>
+                    <div class="mb-3">
+                        <label for="key">Key</label>
+                            <input class="form-control" type="number" name="key" min="1" max="25" required value="#(key)"/>
+                    </div>
+                    <div class="d-grid">
+                        <input class="btn btn-primary" type="submit" value="Decrypt">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    #endexport
+#endextend

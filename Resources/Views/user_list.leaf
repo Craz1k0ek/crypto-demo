@@ -1,0 +1,39 @@
+#extend("index"):
+    #export("content"):
+    <div class="container">
+        <h1>Users</h1>
+        
+        <div class="row">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Username</th>
+                        <th scope="col">Password hash</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    #if(count(users) > 0):
+                    #for(user in users):
+                    <tr>
+                        <td>#(user.username)</td>
+                        <td style="font-family: monospace;">#(user.passwordHash)</td>
+                    </tr>
+                    #endfor
+                    #else:
+                    <tr>
+                        <td>No users available</td>
+                        <td></td>
+                    </tr>
+                    #endif
+                </tbody>
+            </table>
+        </div>
+
+        <div class="row">
+            <div class="d-flex justify-content-end">
+                <a class="btn btn-primary btn-sm" href="/user/list?salt=true">Enable salt</a>
+            </div>
+        </div>
+    </div>
+    #endexport
+#endextend

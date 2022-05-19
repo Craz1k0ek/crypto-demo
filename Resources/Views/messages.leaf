@@ -1,0 +1,31 @@
+#extend("index"):
+    #export("content"):
+    <div class="container">
+        <h1>Messages</h1>
+        <div class="row">
+            #if(count(messages) > 0):
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">From</th>
+                        <th scope="col"></th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    #for(message in messages):
+                    <tr>
+                        <td><a href="/messages/#(message.id)/open">#(message.sender)</a></td>
+                        <td>#(message.id)</td>
+                        <td><a class="btn btn-sm btn-danger" href="/messages/#(message.id)/delete"><i class="bi bi-trash"></i></a>
+                    </tr>
+                    #endfor
+                </tbody>
+            </table>
+            #else:
+            <p>Your inbox is empty</p>
+            #endif
+        </div>
+    </div>
+    #endexport
+#endextend

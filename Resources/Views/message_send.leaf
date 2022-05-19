@@ -1,0 +1,35 @@
+#extend("index"):
+    #export("content"):
+    <div class="container">
+        <h1>Send</h1>
+
+        #if(error):
+            <div class="alert alert-danger" role="alert">#(error)</div>
+        #endif
+
+        <div class="row">
+            <form action="" method="post">
+                <div class="mb-3">
+                    <label class="form-label">Message</label>
+                    <textarea class="form-control" style="resize: none; height: 20vh;" placeholder="Message" name="message">#(message)</textarea>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Password</label>
+                    <input class="form-control" type="password" placeholder="Password" name="password" required/>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Recipient</label>
+                    <select class="form-control" name="recipient" required>
+                        #for(recipient in recipients):
+                        <option value="#(recipient.id)">#(recipient.username)</option>
+                        #endfor
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <input class="btn btn-primary" type="submit" value="Send">
+                </div>
+            </form>            
+        </div>
+    </div>
+    #endexport
+#endextend

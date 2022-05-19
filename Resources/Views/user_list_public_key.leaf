@@ -1,0 +1,28 @@
+#extend("index"):
+    #export("content"):
+    <div class="container">
+        <h1>User Public Keys</h1>
+
+        <div class="row">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Used for</th>
+                        <th scope="col">Public key bytes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Key exchange</td>
+                        <td>#(key_exchange)</td>
+                    </tr>
+                    <tr>
+                        <td>Signing</td>
+                        <td>#(key_signing)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    #endexport
+#endextend

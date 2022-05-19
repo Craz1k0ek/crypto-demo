@@ -1,0 +1,43 @@
+#extend("index"):
+    #export("content"):
+    <div class="container">
+        <h1>HMAC Verify</h1>
+
+        #if(error):
+            <div class="alert alert-danger" role="alert">#(error)</div>
+        #elseif(success):
+            <div class="alert alert-success" role="alert">#(success)</div>
+        #endif
+
+        <div class="row">
+            <form action="" method="post">
+                <div class="mb-3">
+                    <label class="form-label">Message</label>
+                    <textarea class="form-control" style="resize: none; height: 20vh;" placeholder="Message" name="message">#(message)</textarea>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">HMAC</label>
+                    <textarea class="form-control" style="resize: none; height: 10vh;" placeholder="HMAC" name="hmac">#(hmac)</textarea>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Password</label>
+                    <input class="form-control" type="password" placeholder="Password" name="password" required/>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Hash algorithm</label>
+                    <select class="form-control" name="algorithm" required>
+                        <option value="md5">MD5</option>
+                        <option value="sha1">SHA-1</option>
+                        <option value="sha256" selected>SHA-256</option>
+                        <option value="sha384">SHA-384</option>
+                        <option value="sha512">SHA-512</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <input class="btn btn-primary" type="submit" value="Verify">
+                </div>
+            </form>
+        </div>
+    </div>
+    #endexport
+#endextend
